@@ -5,7 +5,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.0.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Makes it easier to use PySCSS in Django
 
 License:        BSD
@@ -14,6 +14,7 @@ Source0:        https://github.com/fusionbox/django-pyscss/archive/v1.0.1.tar.gz
 BuildArch:      noarch
  
 BuildRequires:  python-devel
+BuildRequires:  python-setuptools
 BuildRequires:  python-pillow
 BuildRequires:  python-django-compressor >= 1.3
 BuildRequires:  python-django-discover-runner
@@ -49,5 +50,8 @@ rm -rf %{pypi_name}.egg-info
 %{python2_sitelib}/django_pyscss-%{version}-py?.?.egg-info
 
 %changelog
+* Tue Jul 08 2014 Matthias Runge <mrunge@redhat.com> - 1.0.1-2
+- add br python-setuptools
+
 * Tue Jul 08 2014 Matthias Runge <mrunge@redhat.com> - 1.0.1-1
 - Initial package.
